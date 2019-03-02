@@ -1,0 +1,355 @@
+GBAD 3.3
+
+Parameters:
+  Input file..................... nato-total.g
+  Predefined substructure file... none
+  Output file.................... none
+  Dot file....................... none
+  Beam width..................... 4
+  Compress....................... false
+  Evaluation method.............. MDL
+  Anomaly Detection method....... Maximum Partial
+  Maximum Partial Sub threshold.. 0.350000
+  Max Anomalous Score............ 52.000000
+  Min Anomalous Score............ 52.000000
+  Normative Pattern.............. 2
+  'e' edges directed............. true
+  Iterations..................... 1
+  Limit.......................... 44399
+  Minimum size of substructures.. 9
+  Maximum size of substructures.. 9
+  Number of best substructures... 3
+  Output level................... 2
+  Allow overlapping instances.... false
+  Prune.......................... false
+  Optimized (Anomaly Detection).. true
+  Threshold...................... 0.000000
+  Value-based queue.............. false
+
+Read 1716 total positive graphs
+
+1716 positive graphs: 90514 vertices, 88798 edges, 3923013 bits
+2666 unique labels
+
+2651 initial substructures
+Normative Pattern (2):
+Substructure: value = 1.13604, instances = 1455
+  Graph(9v,8e):
+    v 1 "news"
+    v 2 "media"
+    v 3 "person"
+    v 4 "donald trump"
+    v 5 "handle"
+    v 6 "tweet"
+    v 7 "date"
+    v 8 "2018"
+    v 9 "7"
+    d 1 2 "published_in"
+    d 1 3 "has"
+    d 3 4 "is_a"
+    d 5 1 "mention"
+    d 5 6 "post"
+    d 6 7 "post_on"
+    d 7 8 "year"
+    d 7 9 "month"
+
+Anomalous Instance(s):
+
+ from example 1630:
+    v 85728 "news"
+    v 85729 "author"
+    v 85731 "media"
+    v 85745 "handle"
+    v 85759 "tweet"
+    v 85760 "date"
+    v 85761 "2018"
+    v 85762 "7"
+    d 85728 85729 "wrote_by"
+    d 85728 85731 "published_in"
+    d 85745 85728 "mention"
+    d 85745 85759 "post"
+    d 85759 85760 "post_on"
+    d 85760 85761 "year"
+    d 85760 85762 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 1440:
+    v 76013 "news"
+    v 76014 "author"
+    v 76016 "media"
+    v 76030 "handle"
+    v 76039 "tweet"
+    v 76040 "date"
+    v 76041 "2018"
+    v 76042 "7"
+    d 76013 76014 "wrote_by"
+    d 76013 76016 "published_in"
+    d 76030 76013 "mention"
+    d 76030 76039 "post"
+    d 76039 76040 "post_on"
+    d 76040 76041 "year"
+    d 76040 76042 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 1181:
+    v 62332 "news"
+    v 62333 "author"
+    v 62335 "media"
+    v 62344 "handle"
+    v 62348 "tweet"
+    v 62349 "date"
+    v 62350 "2018"
+    v 62351 "7"
+    d 62332 62333 "wrote_by"
+    d 62332 62335 "published_in"
+    d 62344 62332 "mention"
+    d 62344 62348 "post"
+    d 62348 62349 "post_on"
+    d 62349 62350 "year"
+    d 62349 62351 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 1142:
+    v 60315 "news"
+    v 60316 "author"
+    v 60318 "media"
+    v 60339 "handle"
+    v 60340 "tweet"
+    v 60341 "date"
+    v 60342 "2018"
+    v 60343 "7"
+    d 60315 60316 "wrote_by"
+    d 60315 60318 "published_in"
+    d 60339 60315 "mention"
+    d 60339 60340 "post"
+    d 60340 60341 "post_on"
+    d 60341 60342 "year"
+    d 60341 60343 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 1089:
+    v 57739 "news"
+    v 57740 "author"
+    v 57742 "media"
+    v 57752 "handle"
+    v 57753 "tweet"
+    v 57754 "date"
+    v 57755 "2018"
+    v 57756 "7"
+    d 57739 57740 "wrote_by"
+    d 57739 57742 "published_in"
+    d 57752 57739 "mention"
+    d 57752 57753 "post"
+    d 57753 57754 "post_on"
+    d 57754 57755 "year"
+    d 57754 57756 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 1008:
+    v 53620 "news"
+    v 53621 "author"
+    v 53623 "media"
+    v 53644 "handle"
+    v 53645 "tweet"
+    v 53646 "date"
+    v 53647 "2018"
+    v 53648 "7"
+    d 53620 53621 "wrote_by"
+    d 53620 53623 "published_in"
+    d 53644 53620 "mention"
+    d 53644 53645 "post"
+    d 53645 53646 "post_on"
+    d 53646 53647 "year"
+    d 53646 53648 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 1007:
+    v 53585 "news"
+    v 53586 "author"
+    v 53588 "media"
+    v 53609 "handle"
+    v 53610 "tweet"
+    v 53611 "date"
+    v 53612 "2018"
+    v 53613 "7"
+    d 53585 53586 "wrote_by"
+    d 53585 53588 "published_in"
+    d 53609 53585 "mention"
+    d 53609 53610 "post"
+    d 53610 53611 "post_on"
+    d 53611 53612 "year"
+    d 53611 53613 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 866:
+    v 46097 "news"
+    v 46098 "author"
+    v 46100 "media"
+    v 46109 "handle"
+    v 46119 "tweet"
+    v 46120 "date"
+    v 46121 "2018"
+    v 46122 "7"
+    d 46097 46098 "wrote_by"
+    d 46097 46100 "published_in"
+    d 46109 46097 "mention"
+    d 46109 46119 "post"
+    d 46119 46120 "post_on"
+    d 46120 46121 "year"
+    d 46120 46122 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 610:
+    v 31403 "news"
+    v 31404 "author"
+    v 31406 "media"
+    v 31420 "handle"
+    v 31429 "tweet"
+    v 31430 "date"
+    v 31431 "2018"
+    v 31432 "7"
+    d 31403 31404 "wrote_by"
+    d 31403 31406 "published_in"
+    d 31420 31403 "mention"
+    d 31420 31429 "post"
+    d 31429 31430 "post_on"
+    d 31430 31431 "year"
+    d 31430 31432 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 521:
+    v 26655 "news"
+    v 26656 "author"
+    v 26658 "media"
+    v 26660 "handle"
+    v 26664 "tweet"
+    v 26665 "date"
+    v 26666 "2018"
+    v 26667 "7"
+    d 26655 26656 "wrote_by"
+    d 26655 26658 "published_in"
+    d 26660 26655 "mention"
+    d 26660 26664 "post"
+    d 26664 26665 "post_on"
+    d 26665 26666 "year"
+    d 26665 26667 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 270:
+    v 13881 "news"
+    v 13882 "author"
+    v 13884 "media"
+    v 13898 "handle"
+    v 13909 "tweet"
+    v 13910 "date"
+    v 13911 "2018"
+    v 13912 "7"
+    d 13881 13882 "wrote_by"
+    d 13881 13884 "published_in"
+    d 13898 13881 "mention"
+    d 13898 13909 "post"
+    d 13909 13910 "post_on"
+    d 13910 13911 "year"
+    d 13910 13912 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 252:
+    v 12957 "news"
+    v 12958 "author"
+    v 12960 "media"
+    v 13003 "handle"
+    v 13011 "tweet"
+    v 13012 "date"
+    v 13013 "2018"
+    v 13014 "7"
+    d 12957 12958 "wrote_by"
+    d 12957 12960 "published_in"
+    d 13003 12957 "mention"
+    d 13003 13011 "post"
+    d 13011 13012 "post_on"
+    d 13012 13013 "year"
+    d 13012 13014 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+ from example 249:
+    v 12735 "news"
+    v 12736 "author"
+    v 12738 "media"
+    v 12781 "handle"
+    v 12789 "tweet"
+    v 12790 "date"
+    v 12791 "2018"
+    v 12792 "7"
+    d 12735 12736 "wrote_by"
+    d 12735 12738 "published_in"
+    d 12781 12735 "mention"
+    d 12781 12789 "post"
+    d 12789 12790 "post_on"
+    d 12790 12791 "year"
+    d 12790 12792 "month"
+    (max_partial_substructure anomalous value = 52.000000 )
+
+Best 3 substructures:
+
+(1) Substructure: value = 1.14582, instances = 1581
+  Graph(9v,8e):
+    v 1 "news"
+    v 2 "media"
+    v 3 "person"
+    v 4 "populatedplace"
+    v 5 "handle"
+    v 6 "tweet"
+    v 7 "date"
+    v 8 "2018"
+    v 9 "7"
+    d 1 2 "published_in"
+    d 1 3 "has"
+    d 1 4 "has"
+    d 5 1 "mention"
+    d 5 6 "post"
+    d 6 7 "post_on"
+    d 7 8 "year"
+    d 7 9 "month"
+
+(2) Substructure: value = 1.13604, instances = 1455
+  Graph(9v,8e):
+    v 1 "news"
+    v 2 "media"
+    v 3 "person"
+    v 4 "donald trump"
+    v 5 "handle"
+    v 6 "tweet"
+    v 7 "date"
+    v 8 "2018"
+    v 9 "7"
+    d 1 2 "published_in"
+    d 1 3 "has"
+    d 3 4 "is_a"
+    d 5 1 "mention"
+    d 5 6 "post"
+    d 6 7 "post_on"
+    d 7 8 "year"
+    d 7 9 "month"
+
+(3) Substructure: value = 1.12824, instances = 1415
+  Graph(9v,8e):
+    v 1 "news"
+    v 2 "person"
+    v 3 "donald trump"
+    v 4 "populatedplace"
+    v 5 "handle"
+    v 6 "tweet"
+    v 7 "date"
+    v 8 "2018"
+    v 9 "7"
+    d 1 2 "has"
+    d 2 3 "is_a"
+    d 1 4 "has"
+    d 5 1 "mention"
+    d 5 6 "post"
+    d 6 7 "post_on"
+    d 7 8 "year"
+    d 7 9 "month"
+
+
+GBAD done (elapsed CPU time = 1991.86 seconds).
