@@ -9,6 +9,7 @@ import nltk
 import numpy
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+#calculate cosine similarity
 
 class Similarity:
     def __init__(self):
