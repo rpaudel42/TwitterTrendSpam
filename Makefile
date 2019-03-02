@@ -1,6 +1,6 @@
 .PHONY: all
 all:
-	python main.py
+	python3 main.py
 
 .PHONY: clean
 clean:
