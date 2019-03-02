@@ -122,14 +122,6 @@ class Benevenuto():
         # and lastly we verified if the tweet was posted as a reply.
         # Define Data
 
-        # # Open File
-        # resultFyle = open("output.csv", 'w')
-        #
-        # # Write data to file
-        # for r in RESULTS:
-        #     resultFyle.write(r + "\n")
-        # resultFyle.close()
-        #
         wr = open(dataset.feature_file, 'w')
         wr = csv.writer(wr, dialect='excel')
         header = ['id', 'n_spam_word', 'hashtag_per_word', 'url_per_word', 'num_word', 'num_char', 'num_digit', 'num_url', 'num_hashtag', 'num_user_mention', 'num_rt', 'is_reply', 'is_spam']
@@ -141,44 +133,35 @@ class Benevenuto():
                 feature_row.append(row)
                 tweet = ast.literal_eval(self.tweet_list[row]['tweet'])
                 tweet_text = tweet['text']
-                #print("Tweet : ", tweet_text)
 
                 n_spam_word = self.count_spam_word(tweet_text) #need to generate this
                 print("Spam Word: ", n_spam_word)
                 feature_row.append(n_spam_word)
 
                 w_count = self.count_words(tweet_text)
-                #print("Word Count: ", w_count)
 
                 hashtag_count = self.count_hashtag(tweet)
-                #print("Hashtag Count: ", hashtag_count)
                 feature_row.append(hashtag_count/w_count)
 
-
                 url_count = self.count_urls(tweet_text)
-                #print("URL Count: ", url_count)
                 feature_row.append(url_count/w_count)
                 feature_row.append(w_count)
 
                 c_count, n_count = self.count_character(tweet_text)
-                #print("Character Count: ", c_count, n_count)
                 feature_row.append(c_count)
                 feature_row.append(n_count)
                 feature_row.append(url_count)
                 feature_row.append(hashtag_count)
 
                 u_mention_count = self.count_user_mentions(tweet)
-                #print("User Mention Count: ", u_mention_count)
 
                 feature_row.append(u_mention_count)
 
                 rt_count = self.RT_count(tweet_text)
-                #print("Tweet Reply Count: ", rt_count)
 
                 feature_row.append(rt_count)
 
                 reply = self.is_reply(tweet_text)
-                #print("Is a Reply: ", reply)
                 feature_row.append(reply)
 
                 if row in dataset.spam_id:
@@ -187,13 +170,4 @@ class Benevenuto():
                     is_spam = False
 
                 feature_row.append(is_spam)
-                #print(" \n---------- \n\n")
                 wr.writerow(feature_row)
-
-
-
-
-
-
-
-

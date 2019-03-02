@@ -117,50 +117,6 @@ class GraphParser:
 
         return t_list, n_list
 
-    '''
-    def call_stanford_nlp(self, tweet):
-        nlp = StanfordCoreNLP('http://localhost:{0}'.format(9000))
-        port = 9000
-        annotators='tokenize, ssplit, pos, lemma, depparse, ner, parse, relation'
-        output = nlp.annotate(tweet, properties={
-            "timeout": "200000",
-            "ssplit.newlineIsSentenceBreak": "two",
-            'annotators': annotators,
-            'outputFormat': 'json'
-        })
-        return output
-
-
-    def get_nlp_results(self, tweet):
-        print("Tweet: ", tweet)
-        parsed_tweet = call_stanford_nlp(tweet)
-        Entities = {}
-        index = []
-        #sentiment = []
-        #print("Sentences: ", parsed_tweet['sentences'])
-        if parsed_tweet['sentences']:
-            for sentence in parsed_tweet['sentences']:
-                #for t in sentence['tokens']:
-                    #print(t)
-                for d in sentence['basicDependencies']:
-                    #print(d)
-                    if d['dep'] == 'compound' or d['dep'] == 'amod' or d['dep'] == 'nummod':
-                        dep_index = d['dependent']
-                        gov_index = d['governor']
-                        if sentence['tokens'][dep_index - 1]['ner'] != 'O' and sentence['tokens'][gov_index - 1]['ner'] != 'O':
-                            Entities[d['dependentGloss'] + ' ' + d['governorGloss']] = sentence['tokens'][dep_index - 1]['ner']
-                            index.append(dep_index - 1)
-                            index.append(gov_index - 1)
-                        elif sentence['tokens'][dep_index - 1]['ner'] != 'O':
-                            Entities[d['dependentGloss']] = sentence['tokens'][dep_index - 1]['ner']
-                    else:
-                        dep_index = d['dependent']
-                        gov_index = d['governor']
-                        if sentence['tokens'][dep_index - 1]['ner'] != 'O' and (dep_index - 1) not in index:
-                            Entities[d['dependentGloss']] = sentence['tokens'][dep_index - 1]['ner']
-                #sentiment.append(sentence['sentiment'])
-        return Entities#, sentiment'''
-
     def get_nlp_results(self, text):
         chunked = ne_chunk(pos_tag(word_tokenize(text)))
         # print("Chunked: ", chunked)
@@ -194,7 +150,6 @@ class GraphParser:
         stopwordlist = set(stopwords.words('english'))
         lemmatizer = WordNetLemmatizer()
         for hashtag in hashtags:
-            #print(hashtag['text'])
             if hashtag['text'].isalpha() and hashtag['text'] not in stopwordlist:
                 return True
             elif hashtag['text'].isnumeric():
@@ -227,7 +182,6 @@ class GraphParser:
 
         if ' ' in word_to_test:
             words = word_to_test.split(' ')
-            #print("Space word :", word_to_test, words)
             for w in words:
                 if not w.strip('.').isnumeric():
                     if not w.strip('.').isalpha():
@@ -245,7 +199,6 @@ class GraphParser:
 
 
     def get_nlp_keyword_results(self, textFile, flag):
-        #print(textFile)
         words = word_tokenize(textFile)
         #Remove all single character
         words = [word for word in words if len(word) > 2]
@@ -263,9 +216,6 @@ class GraphParser:
         #Calculate token frequency
         fdist = nltk.FreqDist(words)
 
-        #print only top 5 token
-        #print(fdist.most_common(5))
-
         if flag == 1: # if it is news return top 5 keywords
             count = 1
             keywords = {}
@@ -274,29 +224,24 @@ class GraphParser:
                 if status and count <= 5:
                     keywords[parsed_k] = val
                     count += 1
-                #print(keywords)
             return keywords
         else: #if it is twitter just return 3 keyword only if they are repeated more than once
             count = 1
             keywords = {}
             for key, val in fdist.most_common(5):
-                #print(key, val)
                 if val > 1 and 'http' not in key:
                     status, parsed_k = self.filter_words(key)
                     if status and count <= 3:
                         keywords[parsed_k] = val
                         count += 1
-                    #print(keywords)
             return keywords
 
 
     def get_all_entities(self, text):
         try:
             entities = self.get_nlp_results(text)
-            #print("Entities")
             all_news_entites = []
             for key in entities.keys():
-                # print(key)
                 status, parsed_key = self.filter_words(key.lower())
                 if status is True:
                     identifier = key.lower()
@@ -305,7 +250,6 @@ class GraphParser:
                     else:
                         identifier_class = "Agent"
 
-                    # all_news_entites = []
                     hierarcy = self.generate_ontology(identifier, identifier_class)
                     if hierarcy[0] == key.lower():
                         continue
@@ -381,12 +325,10 @@ class GraphParser:
 
     def graph_parser(self, fw, xp, tweet_list, news_list):
         for i in news_list:
-            #news_id = news_list[i]['id']
             if 1 == 1:
                 #check if the news has twitter handle
                 matching_tweet = [row for row in tweet_list if
                                   (tweet_list[row]['docid'] == news_list[i]['id'] and int(tweet_list[row]['docid']) <= 2)]# and int(tweet_list[row]['docid']) <= 20)]
-                #news_ontology_tracker = {}
                 if len(matching_tweet) > 0:
                     for row in matching_tweet:
                         print(".... Graph: [ %s ] ....", (news_list[i]['id']))

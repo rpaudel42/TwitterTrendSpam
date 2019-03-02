@@ -129,14 +129,6 @@ class Chen():
         # number of mentions,
         # number of retweet
 
-        # # Open File
-        # resultFyle = open("output.csv", 'w')
-        #
-        # # Write data to file
-        # for r in RESULTS:
-        #     resultFyle.write(r + "\n")
-        # resultFyle.close()
-        #
         wr = open(dataset.feature_file, 'w')
         wr = csv.writer(wr, dialect='excel')
         header = ['id', 'account_age', 'no_of_follower', 'no_of_following', 'no_user_fav', 'no_list', 'no_tweet', 'num_char', 'num_digit', 'num_url', 'num_hashtag', 'num_user_mention', 'num_rt',  'is_spam']
@@ -189,7 +181,6 @@ class Chen():
                     is_spam = False
 
                 feature_row.append(is_spam)
-                #print(" \n---------- \n\n")
                 wr.writerow(feature_row)
 
 
