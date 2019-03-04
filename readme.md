@@ -32,7 +32,7 @@ $ python3 main.py
     -make
     -make install
 4. This code implements following paper:
-    Paudel R, Kandel P, Eberle W. [Detecting Spam Tweets in Trending Topics using Graph-Based Approach](https://github.com/rpaudel42/rpaudel42.github.io/blob/master/assets/Spam_detection_in_trending_topic.pdf). (2019 March)
+    Paudel R, Kandel P, Eberle W. Detecting Spam Tweets in Trending Topics using Graph-Based Approach. (2019 March)
 5. The implementation for ﻿Boididou et al. is done using the source code available in their [github repository](https://github.com/MKLab-ITI/computational-verification)
 
 **Description**
@@ -41,6 +41,7 @@ Also, it implement following three baseline approaches used in the paper for per
 + Benevenuto et al.
 + Chen et al. and
 + Anantharam et al.
-
+The result of the experiment is shown in following table. Our graph-based approach was superior to all 4 baseline approaches in terms of recall and f1-score.
+![Performance Comparision for World Cup and NATO Summit Dataset](figures/)
 <br/>
 If you have further inquiry please email at rpaudel42@students.tntech.edu
