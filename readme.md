@@ -41,7 +41,7 @@ to detect anomalous tweets on trending topics. First, we extract named entities
 (like place, person, organization, product, event, or activity) present in the tweet
 and add them as key elements in the graph. As tweets on a certain topic share
 the contextual similarity, we believe they also share same/similar named entities.
-These named entities representing relevant/similar topics can have a relationship
+These named entities representing similar topics can have a relationship
 (e.g., shared ontology) amongst themselves, which we believe if represented
 properly, will provide broader insight on the overall context of the topic.
 Using a well-known graph-based tool like GBAD, we
@@ -66,7 +66,9 @@ performance comparision.:
 + Chen et al. and
 + Anantharam et al.
 <br/>
+
 The result of the experiment is shown in following table. Our graph-based approach is superior to all 4 baseline approaches in terms of recall and f1-score.
 ![Performance Comparision for World Cup and NATO Summit Dataset](figures/results.png)
+
 <br/>
 If you have further inquiry please email at rpaudel42@students.tntech.edu
