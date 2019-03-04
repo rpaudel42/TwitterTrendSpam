@@ -42,6 +42,6 @@ Also, it implement following three baseline approaches used in the paper for per
 + Chen et al. and
 + Anantharam et al.
 The result of the experiment is shown in following table. Our graph-based approach was superior to all 4 baseline approaches in terms of recall and f1-score.
-![Performance Comparision for World Cup and NATO Summit Dataset](figures/)
+![Performance Comparision for World Cup and NATO Summit Dataset](figures/results.png)
 <br/>
 If you have further inquiry please email at rpaudel42@students.tntech.edu
