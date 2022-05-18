@@ -71,4 +71,4 @@ The result of the experiment is shown in following table. Our graph-based approa
 ![Performance Comparision for World Cup and NATO Summit Dataset](figures/results.png)
 
 <br/>
-If you have further inquiry please email at rpaudel42@students.tntech.edu
+If you have further inquiry please email at rpaudel142@gmail.com
